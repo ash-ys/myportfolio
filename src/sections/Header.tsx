@@ -2,7 +2,6 @@
 import { FC, useEffect, useState } from "react";
 import Button from "@/components/Button";
 import { motion, useAnimate } from "framer-motion";
-import { nav } from "motion/react-client";
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const navItems = [

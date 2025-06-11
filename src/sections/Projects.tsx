@@ -5,9 +5,7 @@ import image3 from "@/assets/images/project-3.jpg";
 import image4 from "@/assets/images/project-4.jpg";
 import image5 from "@/assets/images/project-5.jpg";
 import image6 from "@/assets/images/project-6.jpg";
-import { a, hr } from "motion/react-client";
 import Image from "next/image";
-import { link } from "fs";
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const projects = [

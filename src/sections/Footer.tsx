@@ -27,7 +27,7 @@ const Footer: FC = () => {
           <div className="grid md:grid-cols-3 md:items-center">
             <div className="md:col-span-2">
           <h2 className="text-4xl lg:text-8xl mt-8 font-extralight md:text-7xl">
-            Enough talk, Let's make something great
+            Enough talk, Let&apos;s make something great
           </h2>
           <Button
             variant="secondary"
