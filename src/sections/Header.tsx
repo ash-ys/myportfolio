@@ -169,12 +169,17 @@ const Header: FC = () => {
       <div className="fixed top-0 left-0 right-0  w-full mix-blend-difference  backdrop-blur-md z-10">
         <div className="container !max-w-full">
           <div className="flex  justify-between h-20 items-center">
-            <Link
-              href="/"
+            <button
+              onClick={() => {
+                const topSection = document.querySelector("#home");
+                if (topSection) {
+                  topSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
               className="cursor-pointer text-xl font-bold uppercase text-white pointer-events-auto"
             >
               Ashish&nbsp;W*
-            </Link>
+            </button>
           </div>
         </div>
       </div>
@@ -183,7 +188,7 @@ const Header: FC = () => {
           <div className="flex  justify-end h-20 items-center">
             <div className="flex items-center gap-4">
               <div
-                className="size-11 border border-stone-400 pointer-events-auto  hover:border-red-orange-500 hover:text-red-orange-500 rounded-full inline-flex items-center justify-center bg-[#e5e7eb] "
+                className="size-11 border border-stone-400 pointer-events-auto  hover:border-red-orange-500 hover:text-red-orange-500 rounded-full inline-flex items-center justify-center bg-stone-200 "
                 onClick={() => setIsOpen(!isOpen)}
               >
                 <svg

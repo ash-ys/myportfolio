@@ -72,7 +72,7 @@ const Projects: FC = () => {
                   <div className="relative">
                     <div
                       className="absolute aspect-video w-full top-1/2 -translate-y-1/2 opacity-0 scale-90 group-hover/project:opacity-100 group-hover/project:scale-100
-                    transition-all duration-500 z-10  lg:group-hover/project:scale-110"
+                    transition-all duration-500 z-[9]  lg:group-hover/project:scale-110"
                     >
                       <Image
                         src={image}

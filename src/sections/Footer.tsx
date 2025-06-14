@@ -16,7 +16,7 @@ const navItems = [
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-stone-900 text-white py-16" id="contact">
+    <footer className="bg-stone-900 text-stone-200 py-16" id="contact">
       <div className="container">
         <div className="section">
           <div className="flex items-center gap-3 ">
@@ -255,14 +255,22 @@ const Footer: FC = () => {
                 </Button>
               </a>
             </div>
-            <div>
+            <div >
               <nav className="flex flex-col md:items-end gap-8 mt-16 md:mt-0">
                 {navItems.map(({ label, href }) => (
-                  <a key={label} href={href}>
-                    <Button variant="text" className="text-lg">
-                      {label}
-                    </Button>
-                  </a>
+                  <Button
+                    key={label}
+                    onClick={() => {
+                      const section = document.querySelector(href);
+                      if (section) {
+                        section.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
+                    variant="text"
+                    className="text-lg w-fit"
+                  >
+                    {label}
+                  </Button>
                 ))}
               </nav>
             </div>
