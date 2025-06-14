@@ -1,7 +1,9 @@
 "use client";
+
 import { FC, useEffect, useState } from "react";
 import Button from "@/components/Button";
 import { motion, useAnimate } from "framer-motion";
+import Link from "next/link";
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const navItems = [
@@ -13,14 +15,10 @@ const navItems = [
     label: "Selected Works",
     href: "#projects",
   },
-  {
-    label: "Testimonials",
-    href: "#testimonials",
-  },
-  {
-    label: "FAQs",
-    href: "#faqs",
-  },
+  // {
+  //   label: "Testimonials",
+  //   href: "#testimonials",
+  // },
   {
     label: "Contact",
     href: "#contact",
@@ -32,7 +30,6 @@ const Header: FC = () => {
   const [topLineScope, topLineAnimate] = useAnimate();
   const [bottomLineScope, bottomLineAnimate] = useAnimate();
   const [navScope, navAnimate] = useAnimate();
-
 
   useEffect(() => {
     if (isOpen) {
@@ -65,17 +62,14 @@ const Header: FC = () => {
         ],
       ]);
       navAnimate(
-        
-          navScope.current,
-          {
-            height: "100%",
-          },
-          {
-            duration: 0.7,
-          }
-        
-        );
-      
+        navScope.current,
+        {
+          height: "100%",
+        },
+        {
+          duration: 0.7,
+        }
+      );
     } else {
       topLineAnimate([
         [
@@ -105,11 +99,9 @@ const Header: FC = () => {
           },
         ],
       ]);
-      navAnimate(
-        navScope.current,
-        {
-          height: 0,
-        });
+      navAnimate(navScope.current, {
+        height: 0,
+      });
     }
   }, [
     isOpen,
@@ -119,60 +111,79 @@ const Header: FC = () => {
     bottomLineAnimate,
     navScope,
 
-navAnimate  ]);
+    navAnimate,
+  ]);
+  const handleClickMobileNavItem = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setIsOpen(false);
+    const url = new URL(e.currentTarget.href);
+    const hash = url.hash;
+    const target = document.querySelector(hash);
+    if (!target) return;
+    target.scrollIntoView({
+      behavior: "smooth",
+    });
+    //element.scrollIntoView({
+    //   behavior: "smooth",
+    // });
+  };
 
   return (
-    <header>
-      <div className="fixed top-0 left-0 right-0 w-full h-0 overflow-hidden bg-stone-900" ref={navScope}>
+    <header id="home">
+      <div
+        className="fixed top-0 left-0 right-0 w-full h-0 overflow-hidden bg-stone-900 z-10"
+        ref={navScope}
+      >
         <nav className="mt-20 flex flex-col">
           {navItems.map(({ label, href }) => (
             <a
               href={href}
               key={label}
-              className="text-stone-200 border-t border-stone-800 last:border-b py-8 grou"
+              className="text-stone-200 border-t border-stone-800 last:border-b py-8 group/nav-item relative isolate"
+              onClick={handleClickMobileNavItem}
             >
               <div className="container !max-w-full flex items-center justify-between">
-              <span className="text-3xl">{label}</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="size-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-                />
-              </svg></div> 
+                <span className="text-3xl group-hover/nav-item:pl-4 transition-all duration-500">
+                  {label}
+                </span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="size-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                  />
+                </svg>
+              </div>
+              <div className="absolute w-full h-0 bg-red-orange-500 group-hover/nav-item:h-full transition duration-500 bottom-0 -z-10"></div>
             </a>
           ))}
         </nav>
       </div>
-      <div className="fixed top-0 left-0 right-0  w-full mix-blend-difference  backdrop-blur-md">
+      <div className="fixed top-0 left-0 right-0  w-full mix-blend-difference  backdrop-blur-md z-10">
         <div className="container !max-w-full">
           <div className="flex  justify-between h-20 items-center">
-            <div>
-              <a href="/">
-                <span className="text-xl font-bold uppercase  text-white">
-                  Ashish&nbsp; W*
-                </span>
-                {/* <span className="text-xl font-bold uppercase text-red-orange-500">
-                  *
-                </span> */}
-              </a>
-            </div>
+            <Link
+              href="/"
+              className="cursor-pointer text-xl font-bold uppercase text-white pointer-events-auto"
+            >
+              Ashish&nbsp;W*
+            </Link>
           </div>
         </div>
       </div>
-      <div className="fixed top-0 left-0 right-0 w-full">
+      <div className="fixed top-0 left-0 right-0 w-full z-50 pointer-events-none">
         <div className="container !max-w-full">
           <div className="flex  justify-end h-20 items-center">
             <div className="flex items-center gap-4">
               <div
-                className="size-11 border border-stone-400 rounded-full inline-flex items-center justify-center bg-stone-200"
+                className="size-11 border border-stone-400 pointer-events-auto  hover:border-red-orange-500 hover:text-red-orange-500 rounded-full inline-flex items-center justify-center bg-[#e5e7eb] "
                 onClick={() => setIsOpen(!isOpen)}
               >
                 <svg
@@ -209,7 +220,16 @@ navAnimate  ]);
                   />
                 </svg>
               </div>
-              <Button variant="primary" className=" hidden md:inline-flex ">
+              <Button
+                variant="primary"
+                className=" hidden md:inline-flex pointer-events-auto"
+                onClick={() => {
+                  const section = document.getElementById("contact");
+                  if (section) {
+                    section.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+              >
                 Contact Me
               </Button>
             </div>

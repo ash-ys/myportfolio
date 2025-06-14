@@ -1,0 +1,42 @@
+/* WebKit Browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 15px; /* Thicker scrollbar */
+  height: 15px; /* For horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Remove track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff2000; /* Main thumb color */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B01700; /* Darker shade on hover */
+}
+
+/* Remove scrollbar buttons (arrows) */
+::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: auto; /* Thicker scrollbar */
+  scrollbar-color: #ff2000 transparent; /* Thumb | Transparent track */
+}
+.bg__noise::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  content: "";
+  opacity: 0.06; /* you can control opacity of noise  */
+  z-index: 1000;
+  pointer-events: none;
+  background: url(/noise.gif);
+}

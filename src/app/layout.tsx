@@ -24,8 +24,11 @@ export default function RootLayout({
       <body
         className={`antialiased bg-stone-200 text-stone-900 ${archivo.variable} font-sans`}
       >
-        {children}
+        <main className="min-h-screen pt-20 bg__noise bg-gray-100">{children}</main>
+        
       </body>
     </html>
   );
 }
+
+
