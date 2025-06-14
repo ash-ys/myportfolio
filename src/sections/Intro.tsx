@@ -30,7 +30,7 @@ const Intro: FC = () => {
           
       );
     }
-    }, [inView, animate]);
+    }, [inView, animate,scope]);
 
   return (
     <section className="section mt-12 md:mt-16 lg:mt-20" ref={scope} id="intro">

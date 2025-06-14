@@ -3,7 +3,6 @@
 import { FC, useEffect, useState } from "react";
 import Button from "@/components/Button";
 import { motion, useAnimate } from "framer-motion";
-import Link from "next/link";
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const navItems = [

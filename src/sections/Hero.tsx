@@ -1,5 +1,4 @@
 import { FC, useEffect, useRef } from "react";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 import heroImage from "@/assets/images/hero-image.jpg";
 import Image from "next/image";
@@ -10,16 +9,16 @@ import {
   motion,
   stagger,
   useScroll,
-  useTransform,
+  
 } from "motion/react";
-import { transform } from "next/dist/build/swc/generated-native";
+// import { transform } from "next/dist/build/swc/generated-native";
 
-import { div } from "motion/react-client";
+// import { div } from "motion/react-client";
 
 const Hero: FC = () => {
   const [titleScope, titleAnimate] = useAnimate();
   const scrollingDiv = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
+  const { } = useScroll({
     target: scrollingDiv,
     offset: ["start end", "end end"],
   });
@@ -38,7 +37,7 @@ const Hero: FC = () => {
         ease: "easeOut",
       }
     );
-  }, []);
+  }, [titleAnimate, titleScope]);
 
   return (
     <section>

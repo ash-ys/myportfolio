@@ -50,7 +50,7 @@ const Testimonials: FC = () => {
       <div className="container">
         <div className="mt-20">
           {testimonials.map(
-            ({ name, company, role, quote, image, imagePositionY },index) => index === 
+            ({ name, company, role, quote, image },index) => index === 
             testimonialIndex && (
               <div key={name} className="grid md:grid-cols-5 md:gap-8 lg:gap-16 md:items-center">
                 <div className="aspect-square md:col-span-2 md:aspect-[9/16]">

@@ -1,7 +1,6 @@
 "use client";
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import Button from "@/components/Button";
-import { useInView } from "motion/react";
 
 const navItems = [
   {
