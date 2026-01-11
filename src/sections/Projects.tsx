@@ -1,5 +1,6 @@
 import { FC } from "react";
 import image1 from "@/assets/images/project-1.jpg";
+import image0 from "@/assets/images/project-0.png";
 import image2 from "@/assets/images/project-2.jpg";
 import image3 from "@/assets/images/project-3.jpg";
 import image4 from "@/assets/images/project-4.jpg";
@@ -10,10 +11,16 @@ import Image from "next/image";
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const projects = [
   {
+    name: "Khajakkhaney",
+    image: image0,
+    link: "https://www.khajakkhaney.com/",
+  },
+  {
     name: "Kaleidoscopic Nepal",
     image: image1,
     link: "https://www.kalnepal.com/",
   },
+  
   {
     name: "Ticketfam",
     image: image2,
@@ -45,7 +52,7 @@ const Projects: FC = () => {
   return (
     <section className="section" id="projects">
       <div className="container">
-        <h2 className="text-4xl md:text-7xl lg:text-8xl">My Works</h2>
+        <h2 className="text-4xl md:text-7xl lg:text-8xl">Design Projects</h2>
         <div className="mt-10 md:mt-16 lg:mt-20">
           {projects.map(({ name, image, link }) => (
             <a

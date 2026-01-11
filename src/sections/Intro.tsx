@@ -36,7 +36,7 @@ const Intro: FC = () => {
     <section className="section mt-12 md:mt-16 lg:mt-20" ref={scope} id="intro">
       <div className="container">
         <h2 className="text-4xl md:text-7xl lg:text-8xl lg:w-[80%]">
-         I&apos;ll collab with you to <span className="text-red-orange-500">design</span> and <span className="text-red-orange-500">build</span> a custom website that reflects your brand<span className="text-red-orange-500 font-semibold">.</span>        
+         I&apos;ll collab with you to <span className="text-red-orange-500">design</span> & <span className="text-red-orange-500">build</span> a custom website that reflects your brand<span className="text-red-orange-500 font-semibold">.</span>        
         </h2>
       </div>
     </section>

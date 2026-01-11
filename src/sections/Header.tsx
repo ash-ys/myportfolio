@@ -14,10 +14,10 @@ const navItems = [
     label: "Selected Works",
     href: "#projects",
   },
-  // {
-  //   label: "Testimonials",
-  //   href: "#testimonials",
-  // },
+   {
+    label: "Motion Designs",
+    href: "#motion",
+  },
   {
     label: "Contact",
     href: "#contact",

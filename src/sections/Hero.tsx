@@ -4,13 +4,7 @@ import heroImage from "@/assets/images/hero-image.jpg";
 import Image from "next/image";
 import Button from "@/components/Button";
 import SplitType from "split-type";
-import {
-  useAnimate,
-  motion,
-  stagger,
-  useScroll,
-  
-} from "motion/react";
+import { useAnimate, motion, stagger, useScroll } from "motion/react";
 // import { transform } from "next/dist/build/swc/generated-native";
 
 // import { div } from "motion/react-client";
@@ -18,7 +12,7 @@ import {
 const Hero: FC = () => {
   const [titleScope, titleAnimate] = useAnimate();
   const scrollingDiv = useRef<HTMLDivElement>(null);
-  const { } = useScroll({
+  const {} = useScroll({
     target: scrollingDiv,
     offset: ["start end", "end end"],
   });
