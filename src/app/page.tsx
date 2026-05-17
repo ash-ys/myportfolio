@@ -5,7 +5,6 @@ import Intro from "@/sections/Intro";
 import Projects from "@/sections/Projects";
 import Footer from "@/sections/Footer";
 import Motion from "@/sections/Motion";
-// import Cases from "@/sections/Cases";
 
 export default function Home() {
   return (
@@ -14,7 +13,6 @@ export default function Home() {
       <Hero />
       <Intro />
       <Projects />
-      {/* <Cases /> */}
       <Motion />
       <Footer />
     </>
