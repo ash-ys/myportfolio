@@ -1,4 +1,5 @@
 "use client";
+import "./index.css";
 import Header from "@/sections/Header";
 import Hero from "@/sections/Hero";
 import Intro from "@/sections/Intro";
