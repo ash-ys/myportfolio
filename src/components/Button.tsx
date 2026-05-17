@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 
 const Button = (
   props: {
-    variant: "primary" | "secondary" | "white" | "text";
+    variant: "primary" | "secondary" | "white" | "text" | "green";
     iconAfter?: ReactNode;
   } & ButtonHTMLAttributes<HTMLButtonElement>
 ) => {
@@ -16,6 +16,8 @@ const Button = (
           "bg-red-orange-500 text-white hover:bg-[#D91C00] hover:text-white active:bg-[#B01700]",
         variant === "white" &&
           "bg-white text-stone-800 hover:bg-red-orange-500 hover:text-white border-white active:bg-[#B01700]",
+           variant === "green" &&
+          "bg-green-600 text-white hover:bg-green-700 hover:text-white border-green-600 active:bg-green-800",
         variant === "secondary" &&
           " hover:bg-red-orange-500 hover:text-stone-200 active:bg-[#B01700] hover:border-white",
         variant === "text" &&

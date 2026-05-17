@@ -1,6 +1,7 @@
 "use client";
 import { FC } from "react";
 import Button from "@/components/Button";
+// import Interactive3DModel from '@/components/Interactive3DModel';
 
 const navItems = [
   {
@@ -253,6 +254,52 @@ const Footer: FC = () => {
                   awagle4@gmail.com
                 </Button>
               </a>
+               <a
+                href="https://www.ashishwagle.com.np"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="green"
+                  className="mt-8"
+                  iconAfter={
+                    <div className="size-6 overflow-hidden">
+                      <div className="w-12 h-6 flex transition-transform duration-300 group-hover/button:-translate-x-1/2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="currentColor"
+                          className="size-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="currentColor"
+                          className="size-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  }
+                >
+                  Second Portfolio
+                </Button>
+              </a>
             </div>
             <div >
               <nav className="flex flex-col md:items-end gap-8 mt-16 md:mt-0">
@@ -278,6 +325,13 @@ const Footer: FC = () => {
 
         <p className=" text-white/30 text-sm">Copyright &copy; Ashish Wagle</p>
       </div>
+      {/* <Interactive3DModel
+        modelPath="/models/model.glb"
+        position="header"
+        width={500}
+        height={500}
+        modelScale={1.5}
+      /> */}
     </footer>
   );
 };
